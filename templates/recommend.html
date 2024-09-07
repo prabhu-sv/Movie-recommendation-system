@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Movie</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Recommended Movie</h1>
+        {% if movie %}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">Rating: {{ movie.rating }}</p>
+                </div>
+            </div>
+        {% else %}
+            <p class="mt-4">No movie found for this genre.</p>
+        {% endif %}
+        <a href="/" class="btn btn-secondary mt-3">Go Back</a>
+    </div>
+</body>
+</html>
